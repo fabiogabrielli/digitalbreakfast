@@ -22,5 +22,19 @@ main img {
 
 main span {
     font-weight: 200;
+    font-size: 1rem;
 }
+
+@media screen and (max-width: 720px) {
+    main img {
+        width: 80%;
+    }
+
+    main span {
+        font-weight: 200;
+        font-size: 0.8rem;
+    }
+}
+
+
 
