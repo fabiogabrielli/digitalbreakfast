@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Digital Breakfast Insights — análises, estratégias e ideias práticas sobre growth, marketing, inteligência comercial e IA para o mercado de seguros." />
+  <meta name="theme-color" content="#050505" />
+  <meta property="og:title" content="Digital Breakfast Insights" />
+  <meta property="og:description" content="Ideias para transformar o mercado de seguros através de estratégia, growth, marketing, dados e inteligência artificial." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <title>Insights | Digital Breakfast</title>
+  <link rel="canonical" href="https://digitalbreakfast.com.br/insights/" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: { db: { orange: '#ff5a00', ink: '#050505', panel: '#0d0d0f', line: '#232326', mist: '#f4f4f5' } },
+          boxShadow: { glow: '0 0 90px rgba(255,90,0,.18)', card: '0 24px 80px rgba(0,0,0,.18)' }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="insights.css" />
+</head>
+<body class="bg-db-ink text-white antialiased selection:bg-db-orange selection:text-white">
+  <div class="fixed inset-x-0 top-0 z-[60] h-[2px] origin-left scale-x-0 bg-db-orange" id="scrollProgress"></div>
+
+  <header id="siteHeader" class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/75 backdrop-blur-xl transition-all duration-300">
+    <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
+      <a href="index.html" aria-label="Digital Breakfast">
+        <img src="assets/digital-breakfast-logo-white.svg" alt="Digital Breakfast" class="h-8 w-auto sm:h-9" />
+      </a>
+      <nav class="hidden items-center gap-7 text-sm font-medium text-zinc-300 md:flex">
+        <a class="nav-link" href="index.html#servicos">Serviços</a>
+        <a class="nav-link" href="index.html#ecossistema">Ecossistema</a>
+        <a class="nav-link" href="index.html#sobre">Sobre</a>
+        <a class="nav-link text-white" href="insights.html">Insights</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <a href="index.html#contato" class="hidden items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-black transition hover:bg-db-orange hover:text-white sm:inline-flex">
+          Vamos conversar <i data-lucide="arrow-up-right" class="h-4 w-4"></i>
+        </a>
+        <button id="menuButton" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white md:hidden" aria-label="Abrir menu" aria-expanded="false">
+          <i data-lucide="menu" class="h-5 w-5"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden border-t border-white/10 bg-black/95 px-5 py-6 backdrop-blur-xl md:hidden">
+      <div class="flex flex-col gap-5 text-base text-zinc-200">
+        <a href="index.html#servicos">Serviços</a>
+        <a href="index.html#ecossistema">Ecossistema</a>
+        <a href="index.html#sobre">Sobre</a>
+        <a href="insights.html" class="text-db-orange">Insights</a>
+        <a href="index.html#contato" class="font-semibold text-db-orange">Vamos conversar</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="insights-hero relative overflow-hidden pt-20">
+      <div class="hero-grid absolute inset-0 opacity-70"></div>
+      <div class="absolute left-1/2 top-16 h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-db-orange/10 blur-[120px]"></div>
+      <div class="relative mx-auto max-w-7xl px-5 pb-20 pt-24 lg:px-8 lg:pb-28 lg:pt-32">
+        <div class="reveal max-w-5xl">
+          <div class="mb-7 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[.04] px-4 py-2 text-xs font-semibold uppercase tracking-[.22em] text-zinc-300">
+            <span class="h-2 w-2 rounded-full bg-db-orange"></span>
+            Digital Breakfast Insights
+          </div>
+          <h1 class="text-5xl font-black leading-[.95] tracking-[-.05em] sm:text-7xl lg:text-[6rem]">
+            Ideias para quem quer<br /><span class="text-gradient">mover o mercado.</span>
+          </h1>
+          <p class="mt-8 max-w-3xl text-lg leading-8 text-zinc-300 sm:text-xl">
+            Análises, estratégias e aplicações práticas sobre growth, marketing, inteligência comercial e inteligência artificial para seguradoras, corretoras e insurtechs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-y border-white/10 bg-black py-7">
+      <div class="mx-auto flex max-w-7xl flex-wrap items-center gap-3 px-5 lg:px-8" id="filters" aria-label="Filtrar insights">
+        <button class="filter-button is-active" data-filter="all">Todos</button>
+        <button class="filter-button" data-filter="growth">Growth</button>
+        <button class="filter-button" data-filter="marketing">Marketing</button>
+        <button class="filter-button" data-filter="ia">IA</button>
+        <button class="filter-button" data-filter="gestao">Gestão Comercial</button>
+        <button class="filter-button" data-filter="conteudo">Conteúdo</button>
+      </div>
+    </section>
+
+    <section class="bg-zinc-100 py-20 text-zinc-950 lg:py-28">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <article class="featured-insight reveal" data-category="growth gestao">
+          <a href="sua-corretora-nao-precisa-de-mais-leads-precisa-aproveitar-melhor-os-que-ja-tem.html" class="grid overflow-hidden rounded-[2rem] bg-black text-white shadow-card lg:grid-cols-[1.08fr_.92fr]">
+            <div class="featured-visual relative min-h-[22rem] overflow-hidden p-8 sm:p-12 lg:min-h-[31rem]">
+              <div class="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(255,90,0,.32),transparent_35%),linear-gradient(145deg,#111,#050505)]"></div>
+              <div class="absolute -right-16 -top-16 h-64 w-64 rounded-full border border-white/10"></div>
+              <div class="absolute -right-3 top-12 h-40 w-40 rounded-full border border-white/10"></div>
+              <div class="relative flex h-full flex-col justify-between">
+                <span class="inline-flex w-fit rounded-full bg-db-orange px-3 py-1.5 text-xs font-bold uppercase tracking-[.16em]">Destaque</span>
+                <i data-lucide="funnel" class="h-20 w-20 text-db-orange sm:h-24 sm:w-24"></i>
+              </div>
+            </div>
+            <div class="flex flex-col justify-center p-8 sm:p-12">
+              <div class="flex items-center gap-3 text-xs font-bold uppercase tracking-[.18em] text-db-orange"><span>Growth</span><span class="h-1 w-1 rounded-full bg-zinc-600"></span><span class="text-zinc-500">12 min</span></div>
+              <h2 class="mt-6 text-3xl font-black leading-tight tracking-[-.035em] sm:text-4xl">Sua corretora não precisa de mais leads. Precisa aproveitar melhor os que já tem.</h2>
+              <p class="mt-5 text-base leading-7 text-zinc-400">Antes de investir mais em marketing, descubra quanto dinheiro está sendo perdido dentro do próprio funil de vendas.</p>
+              <span class="mt-8 inline-flex items-center gap-2 font-semibold text-white">Ler insight <i data-lucide="arrow-up-right" class="h-4 w-4"></i></span>
+            </div>
+          </a>
+        </article>
+
+        <div class="mt-16 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p class="eyebrow">Biblioteca</p>
+            <h2 class="mt-3 text-3xl font-black tracking-[-.035em] sm:text-4xl">Todos os insights</h2>
+          </div>
+          <div class="search-wrap">
+            <i data-lucide="search" class="h-4 w-4"></i>
+            <input id="searchInput" type="search" placeholder="Buscar por tema..." aria-label="Buscar insights" />
+          </div>
+        </div>
+
+        <div id="insightsGrid" class="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <article class="repository-card reveal" data-category="growth gestao" data-search="corretora leads funil vendas crm follow-up gestão comercial growth">
+            <a href="sua-corretora-nao-precisa-de-mais-leads-precisa-aproveitar-melhor-os-que-ja-tem.html">
+              <div class="repository-visual bg-black"><i data-lucide="users-round"></i><span>01</span></div>
+              <div class="repository-body"><div class="repository-meta"><span>Growth</span><span>12 min</span></div><h3>Sua corretora não precisa de mais leads. Precisa aproveitar melhor os que já tem.</h3><p>Como reduzir os vazamentos do funil e crescer com mais eficiência comercial.</p><div class="repository-link">Ler artigo <i data-lucide="arrow-up-right"></i></div></div>
+            </a>
+          </article>
+
+          <article class="repository-card reveal" data-category="marketing growth" data-search="marketing intenção google busca clientes procurando seguro seo demanda">
+            <a href="marketing-de-intencao-como-atrair-clientes-que-ja-estao-procurando-seguro.html">
+              <div class="repository-visual bg-db-orange"><i data-lucide="search"></i><span>02</span></div>
+              <div class="repository-body"><div class="repository-meta"><span>Marketing</span><span>14 min</span></div><h3>Marketing de intenção: como atrair clientes que já estão procurando seguro.</h3><p>Como aparecer no momento em que a necessidade do cliente se transforma em ação.</p><div class="repository-link">Ler artigo <i data-lucide="arrow-up-right"></i></div></div>
+            </a>
+          </article>
+
+          <article class="repository-card reveal" data-category="conteudo marketing" data-search="corretor influenciador marketing conteúdo linkedin autoridade digital">
+            <a href="#" aria-label="Corretor influenciador — em breve">
+              <div class="repository-visual bg-zinc-900"><i data-lucide="megaphone"></i><span>03</span></div>
+              <div class="repository-body"><div class="repository-meta"><span>Conteúdo</span><span>Em breve</span></div><h3>Corretor influenciador: por que o conteúdo é a nova porta de entrada do mercado.</h3><p>Autoridade digital como ativo comercial para corretores e corretoras.</p><div class="repository-link">Em breve <i data-lucide="clock-3"></i></div></div>
+            </a>
+          </article>
+
+          <article class="repository-card reveal" data-category="ia gestao" data-search="inteligência artificial ia corretores internet produtividade automação">
+            <a href="#" aria-label="IA para Corretores — em breve">
+              <div class="repository-visual repository-gradient"><i data-lucide="sparkles"></i><span>04</span></div>
+              <div class="repository-body"><div class="repository-meta"><span>IA</span><span>Em breve</span></div><h3>IA para Corretores: a maior oportunidade desde o surgimento da internet.</h3><p>Como a inteligência artificial pode ampliar produtividade, relacionamento e escala.</p><div class="repository-link">Em breve <i data-lucide="clock-3"></i></div></div>
+            </a>
+          </article>
+
+          <article class="repository-card reveal" data-category="growth gestao" data-search="planejamento growth crescimento previsível indicadores execução estratégia">
+            <a href="#" aria-label="Crescimento previsível — em breve">
+              <div class="repository-visual bg-white text-black repository-bordered"><i data-lucide="chart-no-axes-combined"></i><span>05</span></div>
+              <div class="repository-body"><div class="repository-meta"><span>Growth</span><span>Em breve</span></div><h3>Crescimento previsível não nasce de uma boa ideia. Nasce de um sistema.</h3><p>Por que processos, indicadores e ciclos de aprendizado superam iniciativas isoladas.</p><div class="repository-link">Em breve <i data-lucide="clock-3"></i></div></div>
+            </a>
+          </article>
+
+          <article class="repository-card reveal" data-category="marketing conteudo" data-search="linkedin executivos seguros autoridade posicionamento marca pessoal">
+            <a href="#" aria-label="LinkedIn para executivos — em breve">
+              <div class="repository-visual bg-[#0A66C2]"><i data-lucide="linkedin"></i><span>06</span></div>
+              <div class="repository-body"><div class="repository-meta"><span>Marketing</span><span>Em breve</span></div><h3>LinkedIn para executivos de seguros: autoridade antes da oportunidade.</h3><p>Como transformar conhecimento de mercado em posicionamento e relacionamento.</p><div class="repository-link">Em breve <i data-lucide="clock-3"></i></div></div>
+            </a>
+          </article>
+        </div>
+
+        <div id="emptyState" class="hidden py-20 text-center">
+          <i data-lucide="search-x" class="mx-auto h-10 w-10 text-zinc-400"></i>
+          <h3 class="mt-5 text-xl font-bold">Nenhum insight encontrado</h3>
+          <p class="mt-2 text-zinc-500">Tente buscar por outro tema ou selecione uma categoria diferente.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative overflow-hidden border-t border-white/10 bg-black py-24 lg:py-28">
+      <div class="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-db-orange/10 blur-[100px]"></div>
+      <div class="relative mx-auto max-w-4xl px-5 text-center lg:px-8">
+        <p class="eyebrow">Continue explorando</p>
+        <h2 class="mt-5 text-4xl font-black tracking-[-.04em] sm:text-5xl">Estratégia, tecnologia e conhecimento para transformar o mercado de seguros.</h2>
+        <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-zinc-400">Conheça também a consultoria, a Rock Your Business e o método SHIELD.</p>
+        <a href="index.html#ecossistema" class="mt-9 inline-flex items-center gap-2 rounded-full bg-db-orange px-7 py-4 font-semibold text-white transition hover:-translate-y-1 hover:bg-orange-600">Conhecer o ecossistema <i data-lucide="arrow-up-right" class="h-5 w-5"></i></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 bg-black py-10">
+    <div class="mx-auto flex max-w-7xl flex-col gap-6 px-5 sm:flex-row sm:items-center sm:justify-between lg:px-8">
+      <a href="index.html"><img src="assets/digital-breakfast-logo-white.svg" alt="Digital Breakfast" class="h-8 w-auto" /></a>
+      <p class="text-sm text-zinc-500">© <span id="year"></span> Digital Breakfast. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="app.js"></script>
+  <script src="insights.js"></script>
+</body>
+</html>
