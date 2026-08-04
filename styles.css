@@ -67,180 +67,82 @@ body { overflow-x: hidden; }
 .badge-orange, .badge-dark { display: inline-flex; border-radius: 999px; padding: .42rem .8rem; font-size: .68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; }
 .badge-orange { background: #ff5a00; color: #fff; }
 .badge-dark { border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); color: #d4d4d8; }
-.book-editorial {
+
+.shield-title-box {
   position: relative;
-  min-height: 24rem;
-  display: grid;
-  grid-template-columns: minmax(13rem, 17rem) minmax(0, 1fr);
-  align-items: center;
-  gap: clamp(1.5rem, 4vw, 3rem);
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,.08);
-  border-radius: 1.75rem;
-  background:
-    radial-gradient(circle at 78% 18%, rgba(255,90,0,.22), transparent 27%),
-    linear-gradient(145deg, #111113, #050506);
-  padding: clamp(1.5rem, 4vw, 2.75rem);
-}
-.book-editorial-glow {
-  position: absolute;
-  right: -3rem;
-  top: -4rem;
-  width: 18rem;
-  height: 18rem;
-  border-radius: 999px;
-  background: rgba(255,90,0,.18);
-  filter: blur(70px);
-  pointer-events: none;
-}
-.book-cover-card {
-  position: relative;
-  z-index: 1;
-  min-height: 20.5rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,.12);
-  border-left: .9rem solid #ff5a00;
-  border-radius: .75rem 1rem 1rem .75rem;
+  border-radius: 1.75rem;
+  border: 1px solid rgba(255,255,255,.08);
   background:
-    radial-gradient(circle at 88% 12%, rgba(255,90,0,.4), transparent 25%),
-    linear-gradient(145deg, #19191c, #050506 74%);
-  padding: 1.6rem 1.45rem 1.35rem;
-  box-shadow: 0 30px 60px rgba(0,0,0,.46);
-  transform: rotate(-1.5deg);
-  transition: transform .35s ease, box-shadow .35s ease;
+    radial-gradient(circle at 76% 28%, rgba(255,90,0,.24), transparent 34%),
+    linear-gradient(145deg, #141416 0%, #080809 58%, #050506 100%);
+  padding: clamp(2rem, 5vw, 4rem);
+  isolation: isolate;
 }
-.ecosystem-card-book:hover .book-cover-card {
-  transform: rotate(0deg) translateY(-4px);
-  box-shadow: 0 36px 70px rgba(0,0,0,.55);
+.shield-title-glow {
+  position: absolute;
+  right: 7%;
+  top: 12%;
+  width: 18rem;
+  height: 15rem;
+  border-radius: 999px;
+  background: rgba(255,90,0,.18);
+  filter: blur(58px);
+  z-index: -1;
 }
-.book-cover-card::after {
+.shield-title-box::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(110deg, rgba(255,255,255,.08), transparent 24%, transparent 75%, rgba(255,90,0,.09));
   pointer-events: none;
+  background: linear-gradient(110deg, rgba(255,255,255,.035), transparent 26%, transparent 72%, rgba(255,90,0,.06));
 }
-.book-cover-author,
-.book-cover-title,
-.book-cover-copy,
-.book-cover-bottom {
+.shield-title-stack {
   position: relative;
   z-index: 1;
-}
-.book-cover-author {
-  color: #ff6a12;
-  font-size: .66rem;
-  font-weight: 900;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-}
-.book-cover-title {
-  margin-top: 2rem;
-  color: #fff;
-  font-size: clamp(1.5rem, 2.7vw, 2.2rem);
-  line-height: .94;
-  letter-spacing: -.052em;
-  text-transform: uppercase;
-  overflow-wrap: normal;
-  word-break: normal;
-}
-.book-cover-copy {
-  margin-top: 1rem;
-  max-width: 13rem;
-  color: #a1a1aa;
-  font-size: .68rem;
-  line-height: 1.55;
-}
-.book-cover-bottom {
-  margin-top: auto;
+  width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  border-top: 1px solid rgba(255,255,255,.1);
-  padding-top: .95rem;
-  color: #d4d4d8;
-  font-size: .59rem;
-  font-weight: 800;
-  letter-spacing: .14em;
+  text-align: center;
+  gap: .08em;
+}
+.shield-title-stack span {
+  display: block;
+  max-width: 100%;
+  color: #fff;
+  font-size: clamp(2.25rem, 5.25vw, 2.75rem);
+  line-height: .88;
+  font-weight: 900;
+  letter-spacing: -.065em;
   text-transform: uppercase;
+  white-space: nowrap;
 }
-.book-cover-bottom svg {
-  width: 1rem;
-  height: 1rem;
-  color: #ff5a00;
-}
-.book-editorial-copy {
+.shield-title-stack .is-orange { color: #ff5a00; }
+.shield-title-caption {
   position: relative;
   z-index: 1;
-  align-self: center;
-}
-.book-edition-label {
-  display: inline-flex;
-  color: #ff6a12;
-  font-size: .68rem;
-  font-weight: 900;
-  letter-spacing: .17em;
+  margin-top: 2rem;
+  color: #a1a1aa;
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .22em;
   text-transform: uppercase;
 }
-.book-editorial-copy p {
-  margin-top: 1.1rem;
-  max-width: 28rem;
-  color: #d4d4d8;
-  font-size: 1rem;
-  line-height: 1.75;
+.ecosystem-card:hover .shield-title-stack { transform: translateY(-3px); }
+.shield-title-stack { transition: transform .35s ease; }
+@media (max-width: 639px) {
+  .shield-title-box { min-height: 19rem; padding: 2rem 1rem; }
+  .shield-title-stack span {
+    font-size: clamp(1.55rem, 9.5vw, 2.65rem);
+    letter-spacing: -.05em;
+  }
+  .shield-title-caption { margin-top: 1.5rem; font-size: .58rem; }
 }
-.shield-sequence {
-  margin-top: 1.7rem;
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: .45rem;
-}
-.shield-sequence span {
-  display: grid;
-  min-height: 2.5rem;
-  place-items: center;
-  border: 1px solid rgba(255,255,255,.1);
-  border-radius: .7rem;
-  background: rgba(255,255,255,.035);
-  color: #fff;
-  font-size: .78rem;
-  font-weight: 900;
-}
-@media (max-width: 767px) {
-  .book-editorial {
-    min-height: auto;
-    grid-template-columns: 1fr;
-    padding: 1.35rem;
-  }
-  .book-cover-card {
-    width: min(100%, 18rem);
-    min-height: 20rem;
-    justify-self: center;
-  }
-  .book-editorial-copy {
-    text-align: center;
-  }
-  .book-editorial-copy p {
-    margin-inline: auto;
-  }
-}
-@media (max-width: 420px) {
-  .book-cover-card {
-    min-height: 18.75rem;
-    border-left-width: .7rem;
-    padding: 1.35rem 1.15rem 1.15rem;
-  }
-  .book-cover-title {
-    font-size: 1.55rem;
-  }
-  .shield-sequence {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
 
 .company-pill { border: 1px solid #e4e4e7; border-radius: 999px; padding: .55rem 1rem; font-size: .82rem; font-weight: 700; color: #52525b; }
 
