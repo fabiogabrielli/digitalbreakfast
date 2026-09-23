@@ -1,0 +1,5 @@
+DirectoryIndex index.html index.php
+
+RewriteEngine On
+
+RewriteRule ^ebooks/ia-seguros/?$ ebooks/ia-seguros/index.html [L]
