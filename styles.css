@@ -163,7 +163,6 @@ body { overflow-x: hidden; }
 
 /* Explicit category styling prevents malformed/cached card markup from losing the label style. */
 .insight-card .insight-category { margin-top: 1.4rem !important; font-size: .72rem !important; line-height: 1 !important; font-weight: 800 !important; text-transform: uppercase !important; letter-spacing: .18em !important; color: #ff5a00 !important; }
-<<<<<<< HEAD
 
 
 /* E-book card in Digital Breakfast ecosystem */
@@ -286,5 +285,3 @@ body { overflow-x: hidden; }
   .vverio-ecosystem-visual { min-height: 18rem; }
   .vverio-wordmark { font-size: clamp(3.1rem, 19vw, 4.5rem); }
 }
-=======
->>>>>>> e84a610518b04ae2c70e9fa44bb6d21be2c5fb07
